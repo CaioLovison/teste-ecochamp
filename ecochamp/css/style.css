@@ -1,0 +1,81 @@
+/* style.css - EcoChamp protótipo */
+/* Paleta baseada no logo: degradê verde-limão -> verde-escuro */
+:root{
+  --green-100: #f5ffb2;
+  --green-200: #ddf46b;
+  --green-300: #b7ea3b;
+  --green-400: #74c334;
+  --green-500: #3fa222;
+  --green-600: #2b7818;
+  --bg: #f6f6f7;
+  --card: #ffffff;
+  --muted: #6b6b6b;
+  --radius: 12px;
+  --max-width: 1100px;
+  --shadow: 0 8px 28px rgba(0,0,0,0.08);
+}
+
+/* Reset / base */
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter,system-ui,Arial,sans-serif;background:var(--bg);color:#111;-webkit-font-smoothing:antialiased}
+.container{max-width:var(--max-width);margin:0 auto;padding:20px}
+
+/* Topbar */
+.topbar{background:linear-gradient(90deg,var(--green-200),var(--green-400));box-shadow:0 6px 20px rgba(0,0,0,0.06)}
+.nav-content{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
+.brand .logo{width:48px;height:48px;object-fit:contain;border-radius:10px;background:rgba(255,255,255,0.14);padding:6px}
+.brand-text{font-weight:700}
+.menu-toggle{display:none;background:transparent;border:0;font-size:22px;color:rgba(0,0,0,0.7)}
+
+.nav-links{list-style:none;display:flex;gap:10px;align-items:center;margin:0;padding:0}
+.nav-links li a{color:#062e0a;text-decoration:none;padding:8px 10px;border-radius:8px}
+.nav-links li a:hover{background:rgba(255,255,255,0.08)}
+.btn{display:inline-block;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:600;border:0;cursor:pointer}
+.btn.primary{background:var(--green-500);color:white}
+.btn.ghost{background:transparent;color:var(--green-600);border:1px solid rgba(0,0,0,0.06)}
+
+/* Hero */
+.hero{padding:36px 0}
+.hero-content{display:flex;align-items:center;gap:20px;justify-content:space-between}
+.hero h1{margin:0;font-size:28px}
+.lead{color:var(--muted);margin-top:8px}
+.hero-preview .preview-img{width:260px;border-radius:12px;box-shadow:var(--shadow)}
+
+/* Main cards */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:24px}
+.card{background:var(--card);border-radius:12px;padding:18px;box-shadow:var(--shadow)}
+.card.large{display:flex;flex-direction:column;gap:12px}
+.card.small{max-width:480px;margin:0 auto}
+
+/* form */
+.form-row{margin-bottom:12px;display:flex;flex-direction:column}
+.form-row label{font-size:13px;color:var(--muted);margin-bottom:6px}
+.form-row input, .form-row textarea{padding:10px;border-radius:10px;border:1px solid #eee;font-size:15px}
+.group{display:flex;gap:12px}
+.group .col{flex:1}
+
+/* layout for cadastro (two-column) */
+.page-card{display:grid;grid-template-columns:2fr 1fr;gap:18px;margin:30px auto}
+aside.card{height:100%}
+
+/* center pages */
+.center-page{display:flex;align-items:center;justify-content:center;min-height:60vh}
+
+/* map placeholder */
+.map{height:160px;border-radius:10px;background-size:cover;background-position:center;border:1px solid #eee}
+
+/* footer */
+.site-footer{padding:16px 0;background:transparent;text-align:center;color:var(--muted);margin-top:30px}
+
+/* Responsive */
+@media (max-width:980px){
+  .hero-content{flex-direction:column;align-items:flex-start}
+  .cards{grid-template-columns:repeat(1,1fr)}
+  .page-card{grid-template-columns:1fr}
+  .menu-toggle{display:block}
+  .nav-links{position:fixed;right:12px;top:72px;background:rgba(255,255,255,0.98);flex-direction:column;padding:12px;border-radius:10px;display:none}
+  .nav-links.show{display:flex}
+  .menu-toggle{z-index:40}
+  .preview-img{width:100%}
+}
