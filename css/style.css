@@ -79,3 +79,37 @@ aside.card{height:100%}
   .menu-toggle{z-index:40}
   .preview-img{width:100%}
 }
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  padding: 16px;
+}
+
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 22px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  button {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
